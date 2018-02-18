@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Активный студент</string>
+    <string name="login">Войти</string>
+    <string name="makePhoto">Сделать снимок</string>
+    <string name="labelName">Имя пользователя</string>
+    <string name="password">Пароль</string>
+    <string name="strAuth">Авторизация</string>
+    <string name="text_for_recycleview">text for recycleview</string>
+</resources>
