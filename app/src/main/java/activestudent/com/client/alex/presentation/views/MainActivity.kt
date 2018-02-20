@@ -13,7 +13,7 @@ import javax.inject.Inject
 class MainActivity : AppCompatActivity(), MainView {
 
     @Inject
-    lateinit var mPresenter : MainActivityPresenterImpl
+    lateinit var mPresenter: MainActivityPresenterImpl
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,12 +28,11 @@ class MainActivity : AppCompatActivity(), MainView {
         mPresenter.detachView()
     }
 
-    fun setListener(){
+    fun setListener() {
         btnLogin.setOnClickListener {
             mPresenter.saveUserData("login", edLogin.text.toString())
-            mPresenter.saveUserData("password", edPassword.text.toString())
-//            startActivity<StudentRoleActivity>()
-        startActivity<ViolationsActivity>()
+            mPresenter.saveUserData("id", "5a6b9c5e79693800045c3f7a")
+            startActivity<ViolationsActivity>()
         }
     }
 }

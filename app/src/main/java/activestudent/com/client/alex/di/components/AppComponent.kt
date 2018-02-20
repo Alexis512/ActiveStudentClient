@@ -3,10 +3,7 @@ package activestudent.com.client.alex.di.components
 import activestudent.com.client.alex.di.modules.AppModule
 import activestudent.com.client.alex.di.modules.DataModule
 import activestudent.com.client.alex.di.modules.StudentRoleModule
-import activestudent.com.client.alex.presentation.views.CreatureViolationsActivity
-import activestudent.com.client.alex.presentation.views.MainActivity
-import activestudent.com.client.alex.presentation.views.StudentRoleActivity
-import activestudent.com.client.alex.presentation.views.ViolationsActivity
+import activestudent.com.client.alex.presentation.views.*
 import android.app.Application
 import dagger.Component
 import javax.inject.Singleton
@@ -26,4 +23,5 @@ interface AppComponent {
     fun inject(mainActivity: MainActivity)
     fun inject(violationsActivity: ViolationsActivity)
     fun inject(creatureViolationsActivity: CreatureViolationsActivity)
+    fun inject(accountStudent: AccountStudent)
 }

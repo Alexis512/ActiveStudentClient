@@ -4,6 +4,8 @@ import activestudent.com.client.alex.data.Violations
 import activestudent.com.client.alex.model.Messages
 import dagger.Module
 import dagger.Provides
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 /**
@@ -19,4 +21,13 @@ class DataModule {
     @Provides
     fun providesMessages() = Messages(null, null, null, null, null,
             null, null)
+
+
+    @Singleton
+    @Provides
+    fun providesRetrofit() = Retrofit.Builder()
+            .baseUrl("https://smartstud.herokuapp.com/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
 }
+

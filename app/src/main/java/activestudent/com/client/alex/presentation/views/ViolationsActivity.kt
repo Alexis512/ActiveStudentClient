@@ -35,7 +35,7 @@ class ViolationsActivity : AppCompatActivity() {
                 toast("В разработке")
             else {
                 messages.description = it.violation
-                messages.worker = it.worker
+                messages.type_work = it.worker
                 startActivity<CreatureViolationsActivity>()
             }
         }

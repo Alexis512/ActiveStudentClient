@@ -21,6 +21,6 @@ class UserData @Inject constructor(private val context: Context) {
 
     fun loadUserData() : String {
         val sPref = context.getSharedPreferences("UserData", MODE_PRIVATE)
-        return sPref.getString("login", "")
+        return sPref.getString("id", "")
     }
 }
