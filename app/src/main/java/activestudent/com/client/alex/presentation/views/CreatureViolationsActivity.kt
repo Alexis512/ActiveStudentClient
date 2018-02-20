@@ -20,6 +20,7 @@ class CreatureViolationsActivity : AppCompatActivity(), CreatureViolationsView {
         presenter.detachView()
     }
 
+
     @Inject
     lateinit var messages: Messages
     @Inject
