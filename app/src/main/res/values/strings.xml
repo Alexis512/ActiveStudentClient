@@ -6,4 +6,12 @@
     <string name="password">Пароль</string>
     <string name="strAuth">Авторизация</string>
     <string name="text_for_recycleview">text for recycleview</string>
+    <string name="smart_student">Smart Student</string>
+    <string name="hintPass">Пароль</string>
+    <string name="hintId">id студента или сотрудника</string>
+    <string name="title">Smart student</string>
+    <string name="newMsg">Новое сообщение</string>
+    <string name="schedule">Расписание</string>
+    <string name="despription">Заказать справку</string>
+    <string name="my_msg">Мои сообщения</string>
 </resources>

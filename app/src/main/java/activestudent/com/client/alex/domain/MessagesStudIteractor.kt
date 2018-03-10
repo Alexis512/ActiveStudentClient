@@ -38,7 +38,7 @@ class MessagesStudIteractor @Inject constructor(private val retrofit: Retrofit,
     fun allMessages() {
         val messages = retrofit.create(MessagesStudents::class.java)
 
-        messages.allMessegesStudent(UserData(context).loadUserData())
+        messages.allMessegesStudent(UserData(context).loadId())
                 .enqueue(object : Callback<ArrayList<Messages>> {
                     override fun onFailure(call: Call<ArrayList<Messages>>?, t: Throwable?) {
                         Log.d("err", t.toString())
@@ -47,6 +47,21 @@ class MessagesStudIteractor @Inject constructor(private val retrofit: Retrofit,
                     override fun onResponse(call: Call<ArrayList<Messages>>?, response: Response<ArrayList<Messages>>?) {
                         if (response?.isSuccessful!!)
                             Log.d("MESSAGES", response.body().toString())
+                    }
+                })
+    }
+
+    fun changeStatusProc(idMessage: String) {
+        var status = retrofit.create(MessagesStudents::class.java)
+        status.changeStatusProc(idMessage)
+                .enqueue(object : Callback<Void> {
+                    override fun onFailure(call: Call<Void>?, t: Throwable?) {
+                        Log.d("Error", t.toString())
+                    }
+
+                    override fun onResponse(call: Call<Void>?, response: Response<Void>?) {
+                        if (response?.isSuccessful!!)
+                            context.toast("Статус успешно изменен!")
                     }
 
                 })

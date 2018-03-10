@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#2898CF</color>
+    <color name="colorPrimaryDark">#00699d</color>
+    <color name="colorAccent">#2898cf</color>
+    <color name="white">#FFFF</color>
+    <color name="colorBtn">#2898cf</color>
+    <color name="colorBrndAuth">#41b0d9</color>
+    <color name="colorBackground">#cedaed</color>
+    <color name="black">#000</color>
+    <color name="borderBtn">#FDFCFC</color>
+    <color name="btnPressed">#B4C5E4</color>
 </resources>

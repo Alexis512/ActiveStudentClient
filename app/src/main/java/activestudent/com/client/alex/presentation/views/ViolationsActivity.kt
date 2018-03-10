@@ -8,8 +8,11 @@ import activestudent.com.client.alex.presentation.views.recyclerView.adapters.Vi
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
+import android.view.Menu
 import android.widget.LinearLayout
 import kotlinx.android.synthetic.main.activity_violations.*
+import kotlinx.android.synthetic.main.my_toolbar.*
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 import javax.inject.Inject
@@ -26,6 +29,7 @@ class ViolationsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_violations)
         App.component.inject(this)
+        setSupportActionBar(my_toolbar)
 
         recycler.layoutManager = LinearLayoutManager(this, LinearLayout.VERTICAL, false)
         recycler.hasFixedSize()
@@ -40,4 +44,11 @@ class ViolationsActivity : AppCompatActivity() {
             }
         }
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+       menuInflater.inflate(R.menu.my_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+
+    }
+
 }

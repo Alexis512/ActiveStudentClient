@@ -17,5 +17,5 @@ class CreatureViolationsPresenterImpl @Inject constructor(private val sPref: Use
         iteractorMsgStudent.sendMessage()
     }
 
-    override fun getStudId() = sPref.loadUserData()
+    override fun getStudId() = sPref.loadId()
 }

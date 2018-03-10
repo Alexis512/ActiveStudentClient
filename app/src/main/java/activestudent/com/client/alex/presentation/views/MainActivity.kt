@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity(), MainView {
         btnLogin.setOnClickListener {
             mPresenter.saveUserData("login", edLogin.text.toString())
             mPresenter.saveUserData("id", "5a6b9c5e79693800045c3f7a")
-            startActivity<ViolationsActivity>()
+            startActivity<AccountStudent>()
         }
     }
 }

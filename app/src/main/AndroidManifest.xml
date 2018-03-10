@@ -16,7 +16,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".presentation.views.MainActivity">
+        <activity
+            android:name=".presentation.views.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AuthTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -35,9 +38,15 @@
                 android:resource="@xml/provider_paths" />
         </provider>
 
-        <activity android:name=".presentation.views.ViolationsActivity" />
-        <activity android:name=".presentation.views.CreatureViolationsActivity" />
-        <activity android:name=".presentation.views.AccountStudent"></activity>
+        <activity
+            android:name=".presentation.views.ViolationsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".presentation.views.CreatureViolationsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".presentation.views.AccountStudent"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

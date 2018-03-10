@@ -13,8 +13,8 @@ class ViolationsHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
 
     fun bind(item: ViolationsItems, listener: (ViolationsItems) -> Unit) {
-        itemView.btn.text = item.violation
-        itemView.btn.setOnClickListener({ listener(item) })
+        itemView.btnRecycler.text = item.violation
+        itemView.btnRecycler.setOnClickListener({ listener(item) })
     }
 
 }

@@ -7,10 +7,18 @@
 
 
     <Button
-        android:id="@+id/btn"
+        android:id="@+id/btnRecycler"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/text_for_recycleview"
-        android:padding="18dp"
-        android:layout_margin="3dp" />
+        android:layout_height="65dp"
+        android:background="@drawable/ripple_acc_btn"
+        android:drawablePadding="25dp"
+        android:gravity="center_vertical"
+        android:padding="20dp"
+        android:textAllCaps="false"
+        android:textSize="16sp" />
+    <View
+        android:id="@+id/div1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/borderBtn" />
 </LinearLayout>

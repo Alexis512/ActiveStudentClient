@@ -7,6 +7,8 @@ import activestudent.com.client.alex.presentation.mvp.view.AccountView
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_account.*
+import kotlinx.android.synthetic.main.my_toolbar.*
+import org.jetbrains.anko.startActivity
 import javax.inject.Inject
 
 class AccountStudent : AppCompatActivity(), AccountView {
@@ -20,6 +22,7 @@ class AccountStudent : AppCompatActivity(), AccountView {
         setContentView(R.layout.activity_account)
         App.component.inject(this)
         accPresenter.attachView(this)
+        setSupportActionBar(my_toolbar)
         setListener()
     }
 
@@ -29,9 +32,7 @@ class AccountStudent : AppCompatActivity(), AccountView {
     }
 
 
-    fun setListener(){
-        btnMessages.setOnClickListener({
-            accPresenter.allMessagesStudent()
-        })
+    fun setListener() {
+        newMsg.setOnClickListener({ startActivity<ViolationsActivity>() })
     }
 }

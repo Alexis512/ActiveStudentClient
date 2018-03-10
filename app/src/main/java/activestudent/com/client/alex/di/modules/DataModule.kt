@@ -2,6 +2,7 @@ package activestudent.com.client.alex.di.modules
 
 import activestudent.com.client.alex.data.Violations
 import activestudent.com.client.alex.model.Messages
+import activestudent.com.client.alex.model.student.MessagesStudents
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
