@@ -1,89 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/AppTheme"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="activestudent.com.client.alex.presentation.views.CreatureViolationsActivity">
-
-    <TextView
-        android:id="@+id/lbLocation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="28dp"
-        android:text="№ общежития: "
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    android:layout_height="match_parent">
 
 
-    <EditText
-        android:id="@+id/edHostel"
-        android:layout_width="65dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="28dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintStart_toEndOf="@+id/lbLocation"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="activestudent.com.client.alex.presentation.views.CreatureViolationsActivity">
 
-    <TextView
-        android:id="@+id/tvRoom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="28dp"
-        android:text="Комната"
-        app:layout_constraintStart_toEndOf="@+id/edHostel"
-        app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
 
-    <EditText
-        android:id="@+id/edRoom"
-        android:layout_width="48dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="28dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintStart_toEndOf="@+id/tvRoom"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvDesk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="100dp"
-        android:text="Дополнительно описание проблемы"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/edDesk"
-        android:layout_width="341dp"
-        android:layout_height="97dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="128dp"
-        android:ems="10"
-        android:lines="4"
-        android:maxLines="4"
-        android:gravity="top|left"
-        android:hint="Описание проблемы ..."
-        android:inputType="textMultiLine"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <include layout="@layout/my_toolbar" />
+        </LinearLayout>
 
-    <Button
-        android:id="@+id/btnSend"
-        style="@style/ButtonStyle"
-        android:layout_width="185dp"
-        android:layout_height="55dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="52dp"
-        android:text="Отправить"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edDesk" />
-</android.support.constraint.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                android:id="@+id/numHostel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Выберите номер общежития"
+                app:met_underlineColor="@color/colorPrimaryDark"
+                android:textSize="17sp"
+                app:met_floatingLabel="highlight" />
+
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                android:id="@+id/spTypeRoom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Выберите тип помещения"
+                android:textSize="17sp"
+                app:met_underlineColor="@color/colorPrimaryDark"
+                app:met_floatingLabel="highlight"
+                />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/numRoom"
+                android:inputType="number"
+                android:textSize="17sp"
+                android:textCursorDrawable="@drawable/ic_cursor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:met_floatingLabel="highlight"
+                app:met_underlineColor="@color/colorPrimaryDark"
+                app:met_primaryColor="@color/colorPrimary"
+                app:met_maxCharacters="3"
+                android:hint="Введите номер комнаты"/>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/description"
+                android:inputType="textMultiLine"
+                android:textSize="14sp"
+                android:textCursorDrawable="@drawable/ic_cursor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:met_floatingLabel="highlight"
+                app:met_underlineColor="@color/colorPrimaryDark"
+                android:lines="4"
+                app:met_maxCharacters="170"
+                app:met_primaryColor="@color/colorPrimary"
+                app:met_floatingLabelText="Дополнительное описание проблемы"
+                android:hint="Дополнительное описание проблемы ..."/>
+
+
+            <Button
+                android:id="@+id/btnSend"
+                style="@style/ButtonStyle"
+                android:layout_width="185dp"
+                android:layout_height="55dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="52dp"
+                android:text="Отправить" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

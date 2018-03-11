@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="typeRoom">
+        <item>Комната</item>
+        <item>Коридор</item>
+        <item>Туалет</item>
+        <item>Кухня</item>
+        <item>Душевая</item>
+    </string-array>
+    
+</resources>

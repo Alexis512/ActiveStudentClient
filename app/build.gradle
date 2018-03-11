@@ -45,7 +45,8 @@ dependencies {
     implementation "org.jetbrains.anko:anko-support-v4-commons:$anko_version"
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
-
+    implementation 'com.weiwangcn.betterspinner:library-material:1.1.0'
+    implementation 'com.rengwuxian.materialedittext:library:2.1.4'
 }
 repositories {
     mavenCentral()
