@@ -18,4 +18,11 @@ interface MessagesStudents {
     @FormUrlEncoded
     @PUT("/api/v1/updateStatusProc")
     fun changeStatusProc(@Field("id") id: String): Call<Void>
+
+    @FormUrlEncoded
+    @PUT("/api/v1/editMessage")
+    fun editMessage(@Field("id") id: String, @Field("location") location: String, @Field("description") description: String): Call<Void>
+
+    @DELETE("api/v1/deleteMessage/{id}")
+    fun deleteMessage(@Path("id") id: String?): Call<Void>
 }

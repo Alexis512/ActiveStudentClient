@@ -7,5 +7,5 @@ import activestudent.com.client.alex.presentation.mvp.view.AccountView
  */
 interface AccountPresenter : BaseMvpPresenter<AccountView> {
     fun allMessagesStudent()
-    fun updateStutus()
+
 }

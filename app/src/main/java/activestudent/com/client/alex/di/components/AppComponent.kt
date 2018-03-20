@@ -1,8 +1,6 @@
 package activestudent.com.client.alex.di.components
 
-import activestudent.com.client.alex.di.modules.AppModule
-import activestudent.com.client.alex.di.modules.DataModule
-import activestudent.com.client.alex.di.modules.StudentRoleModule
+import activestudent.com.client.alex.di.modules.*
 import activestudent.com.client.alex.presentation.views.*
 import android.app.Application
 import dagger.Component
@@ -14,6 +12,7 @@ import javax.inject.Singleton
 @Singleton
 @Component (modules = arrayOf(AppModule :: class,
         StudentRoleModule :: class,
+        UtilsModule :: class,
         DataModule :: class))
 
 interface AppComponent {
@@ -24,4 +23,7 @@ interface AppComponent {
     fun inject(violationsActivity: ViolationsActivity)
     fun inject(creatureViolationsActivity: CreatureViolationsActivity)
     fun inject(accountStudent: AccountStudent)
+    fun inject(messagesActivity: MyMessagesActivity)
+    fun inject(detailMessageActivity: DetailMessageActivity)
+    fun inject(editMessageActivity: EditMessageActivity)
 }

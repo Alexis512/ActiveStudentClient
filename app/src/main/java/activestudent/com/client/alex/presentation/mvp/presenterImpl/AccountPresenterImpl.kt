@@ -12,10 +12,8 @@ class AccountPresenterImpl @Inject constructor(private val interactorMsgStudent:
     : BaseMvpPresenterImpl<AccountView>(), AccountPresenter {
 
     override fun allMessagesStudent() {
-        interactorMsgStudent.allMessages()
+       // interactorMsgStudent.allMessages()
     }
 
-    override fun updateStutus() {
-        interactorMsgStudent.changeStatusProc("5a8c7cb8242e340004b3b595")
-    }
+
 }

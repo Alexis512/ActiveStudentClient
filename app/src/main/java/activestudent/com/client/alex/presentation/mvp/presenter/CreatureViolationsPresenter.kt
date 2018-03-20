@@ -9,4 +9,6 @@ interface CreatureViolationsPresenter : BaseMvpPresenter<CreatureViolationsView>
 
     fun getStudId() : String
     fun sendMessage()
+    fun onSuccess()
+    fun onFailure()
 }

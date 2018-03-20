@@ -37,9 +37,8 @@
             android:textAlignment="center"
             app:srcCompat="@drawable/ic_account_circle_black_36dp" />
 
-
-        <EditText
-            android:id="@+id/edLogin"
+      <EditText
+          android:id="@+id/edLogin"
             android:layout_width="307dp"
             android:layout_height="40dp"
             android:layout_gravity="center"

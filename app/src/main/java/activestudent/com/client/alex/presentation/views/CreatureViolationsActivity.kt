@@ -5,46 +5,59 @@ import activestudent.com.client.alex.R
 import activestudent.com.client.alex.model.Messages
 import activestudent.com.client.alex.presentation.mvp.presenterImpl.CreatureViolationsPresenterImpl
 import activestudent.com.client.alex.presentation.mvp.view.CreatureViolationsView
-import android.annotation.SuppressLint
+import android.app.ProgressDialog
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
 import android.widget.ArrayAdapter
-import com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
 import kotlinx.android.synthetic.main.activity_creature_violations.*
+import kotlinx.android.synthetic.main.include_layout.*
+import kotlinx.android.synthetic.main.include_layout.view.*
 import kotlinx.android.synthetic.main.my_toolbar.*
-import org.jetbrains.anko.startActivity
+import org.jetbrains.anko.*
 import java.text.SimpleDateFormat
 import java.util.*
 import javax.inject.Inject
 
 
 class CreatureViolationsActivity : AppCompatActivity(), CreatureViolationsView {
-    override fun onDestroy() {
-        super.onDestroy()
-        presenter.detachView()
-    }
 
 
     @Inject
     lateinit var messages: Messages
     @Inject
     lateinit var presenter: CreatureViolationsPresenterImpl
+    private var progressDialog: ProgressDialog? = null
 
-    @SuppressLint("ResourceAsColor")
-    fun initSpinnerRoom() {
-        val adapter = ArrayAdapter.createFromResource(this, R.array.typeRoom,  android.R.layout.simple_dropdown_item_1line)
-        adapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item)
-        spTypeRoom.setAdapter(adapter)
-        val numAdapter = ArrayAdapter.createFromResource(this, R.array.numRoom,  android.R.layout.simple_dropdown_item_1line)
-        adapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item)
-        numHostel.setAdapter(numAdapter)
+    override fun showProgressDialog() {
+        progressDialog = indeterminateProgressDialog("Отправка сообщения")
+        progressDialog!!.show()
     }
+
+    override fun onFailure() {
+        toast("Сообщение не отправлено.")
+        startActivity(intentFor<AccountStudent>().clearTop())
+    }
+
+    override fun onSuccess() {
+        toast("Сообщение успешно отправлено.")
+        startActivity(intentFor<AccountStudent>().clearTop())
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter.detachView()
+        if (progressDialog != null)
+            progressDialog!!.dismiss()
+    }
+
+    override fun hideProgressDialog() {
+        progressDialog!!.hide()
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_creature_violations)
-        initSpinnerRoom()
         App.component.inject(this)
         presenter.attachView(this)
         setSupportActionBar(my_toolbar)
@@ -56,15 +69,14 @@ class CreatureViolationsActivity : AppCompatActivity(), CreatureViolationsView {
     }
 
     fun onClickBtnSend() {
-        var nRoom = numRoom.text
-        var nHostel = numHostel.text
-        var type = spTypeRoom.text
-        var desk = description.text
-        Log.d("asd", "sd")
-      /*  //  messages.location = "Общежитие №" + edHostel.text + " , комната №" + edRoom.text
-        messages.time_state = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ").format(Date())
-        messages.id_stud = presenter.getStudId()
-        presenter.sendMessage()*/
-      /*  startActivity<AccountStudent>()*/
+        if (formCreature.numRoom.text.length == 0)
+            toast("Заполните все поля!")
+        else {
+            messages.location = numRoom.text.toString()
+            messages.time_state = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ").format(Date())
+            messages.description = description.text.toString()
+            messages.id_stud = presenter.getStudId()
+            presenter.sendMessage()
+        }
     }
 }

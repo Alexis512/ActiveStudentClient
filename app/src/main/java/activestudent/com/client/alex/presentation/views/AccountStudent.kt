@@ -34,5 +34,6 @@ class AccountStudent : AppCompatActivity(), AccountView {
 
     fun setListener() {
         newMsg.setOnClickListener({ startActivity<ViolationsActivity>() })
+        myMsg.setOnClickListener({startActivity<MyMessagesActivity>()})
     }
 }

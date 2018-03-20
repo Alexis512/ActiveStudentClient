@@ -1,24 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/AppTheme"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="wrap_content">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         tools:context="activestudent.com.client.alex.presentation.views.CreatureViolationsActivity">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -28,71 +18,18 @@
             <include layout="@layout/my_toolbar" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="30dp"
-            android:focusableInTouchMode="true"
-            android:orientation="vertical">
+        <include
+            android:id="@+id/formCreature"
+            layout="@layout/include_layout" />
 
-            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
-                android:id="@+id/numHostel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Выберите номер общежития"
-                app:met_underlineColor="@color/colorPrimaryDark"
-                android:textSize="17sp"
-                app:met_floatingLabel="highlight" />
-
-            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
-                android:id="@+id/spTypeRoom"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Выберите тип помещения"
-                android:textSize="17sp"
-                app:met_underlineColor="@color/colorPrimaryDark"
-                app:met_floatingLabel="highlight"
-                />
-
-            <com.rengwuxian.materialedittext.MaterialEditText
-                android:id="@+id/numRoom"
-                android:inputType="number"
-                android:textSize="17sp"
-                android:textCursorDrawable="@drawable/ic_cursor"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:met_floatingLabel="highlight"
-                app:met_underlineColor="@color/colorPrimaryDark"
-                app:met_primaryColor="@color/colorPrimary"
-                app:met_maxCharacters="3"
-                android:hint="Введите номер комнаты"/>
-
-            <com.rengwuxian.materialedittext.MaterialEditText
-                android:id="@+id/description"
-                android:inputType="textMultiLine"
-                android:textSize="14sp"
-                android:textCursorDrawable="@drawable/ic_cursor"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:met_floatingLabel="highlight"
-                app:met_underlineColor="@color/colorPrimaryDark"
-                android:lines="4"
-                app:met_maxCharacters="170"
-                app:met_primaryColor="@color/colorPrimary"
-                app:met_floatingLabelText="Дополнительное описание проблемы"
-                android:hint="Дополнительное описание проблемы ..."/>
-
-
-            <Button
-                android:id="@+id/btnSend"
-                style="@style/ButtonStyle"
-                android:layout_width="185dp"
-                android:layout_height="55dp"
-                android:layout_gravity="center"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="52dp"
-                android:text="Отправить" />
-        </LinearLayout>
+        <Button
+            android:id="@+id/btnSend"
+            style="@style/ButtonStyle"
+            android:layout_width="185dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="15dp"
+            android:text="@string/send" />
     </LinearLayout>
 </ScrollView>

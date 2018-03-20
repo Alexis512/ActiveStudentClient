@@ -10,6 +10,7 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.Menu
+import android.view.View
 import android.widget.LinearLayout
 import kotlinx.android.synthetic.main.activity_violations.*
 import kotlinx.android.synthetic.main.my_toolbar.*
@@ -38,7 +39,7 @@ class ViolationsActivity : AppCompatActivity() {
             if (it.violation == "Другое")
                 toast("В разработке")
             else {
-                messages.description = it.violation
+                messages.categoryWork = it.violation
                 messages.type_work = it.worker
                 startActivity<CreatureViolationsActivity>()
             }

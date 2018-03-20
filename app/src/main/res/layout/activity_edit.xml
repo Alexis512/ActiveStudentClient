@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="activestudent.com.client.alex.presentation.views.EditMessageActivity">
+
+
+    <include layout="@layout/my_toolbar"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+    <include
+        android:id="@+id/formEditMsg"
+        layout="@layout/include_layout" />
+
+    <Button
+        android:id="@+id/btnSaveEdit"
+        style="@style/ButtonStyle"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/ripple"
+        android:text="@string/save" />
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>

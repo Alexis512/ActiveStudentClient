@@ -14,4 +14,16 @@
     <string name="schedule">Расписание</string>
     <string name="despription">Заказать справку</string>
     <string name="my_msg">Мои сообщения</string>
+    <string name="dataState">Дата поступления</string>
+    <string name="dataImpl">Дата выполнения</string>
+    <string name="address">Адрес</string>
+    <string name="desc">Дополнительное описание</string>
+    <string name="executor">Исполнитель</string>
+    <string name="delete">Удалить</string>
+    <string name="edit">Редактировать</string>
+    <string name="title_activity_edit_message">EditMessageActivity</string>
+    <string name="save">Сохранить</string>
+    <string name="numMessage">Номер заявки</string>
+    <string name="done">Обжаловать</string>
+    <string name="send">Отправить</string>
 </resources>
