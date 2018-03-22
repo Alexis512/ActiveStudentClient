@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     style="@style/AppTheme"
     android:orientation="vertical"
-    tools:context="activestudent.com.client.alex.presentation.views.AccountStudent">
+    tools:context="activestudent.com.client.alex.presentation.views.student.AccountStudent">
 
     <include
         android:id="@+id/include"

@@ -9,6 +9,7 @@ class Violations {
 
     fun getViolationsItem() : ArrayList<ViolationsItems>{
 
+        //вынести array.xml
         val violations = ArrayList<ViolationsItems>()
         violations.add(ViolationsItems("Замена лампочки", "Электрик"))
         violations.add(ViolationsItems("Замена замка", "Слесарь"))

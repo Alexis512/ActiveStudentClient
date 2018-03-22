@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="activestudent.com.client.alex.presentation.views.ViolationsActivity">
+    tools:context="activestudent.com.client.alex.presentation.views.student.ViolationsActivity">
 
     <include layout="@layout/my_toolbar" />
 
@@ -13,5 +13,5 @@
         android:id="@+id/recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="activestudent.com.client.alex.presentation.views.ViolationsActivity" />
+        tools:context="activestudent.com.client.alex.presentation.views.student.ViolationsActivity" />
 </LinearLayout>

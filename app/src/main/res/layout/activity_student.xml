@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="activestudent.com.client.alex.presentation.views.StudentRoleActivity"
+    tools:context="activestudent.com.client.alex.presentation.views.student.StudentRoleActivity"
     android:orientation="vertical">
 
     <ImageView

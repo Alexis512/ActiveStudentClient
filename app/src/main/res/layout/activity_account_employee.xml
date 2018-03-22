@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="activestudent.com.client.alex.presentation.views.employee.AccountEmployeeActivity">
+
+    <include layout="@layout/my_toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnAllMsg"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:background="@drawable/ripple"
+            android:text="@string/untreatedMsg" />
+
+        <Button
+            android:id="@+id/btnUntreatedMsg"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/ripple"
+            android:text="@string/allMsg" />
+    </LinearLayout>
+</LinearLayout>

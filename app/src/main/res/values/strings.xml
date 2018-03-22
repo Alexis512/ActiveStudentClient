@@ -26,4 +26,8 @@
     <string name="numMessage">Номер заявки</string>
     <string name="done">Обжаловать</string>
     <string name="send">Отправить</string>
+    <string name="allMsg">Мои выполненные зявки</string>
+    <string name="untreatedMsg">Новые зявки</string>
+    <string name="labelNewMessages">Нет новых заявок.</string>
+    <string name="LabelMyMessage">Ваших сообщений не найдено.</string>
 </resources>

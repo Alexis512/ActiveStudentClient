@@ -26,7 +26,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".presentation.views.StudentRoleActivity" />
+        <activity android:name=".presentation.views.student.StudentRoleActivity" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -39,22 +39,26 @@
         </provider>
 
         <activity
-            android:name=".presentation.views.ViolationsActivity"
+            android:name=".presentation.views.student.ViolationsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".presentation.views.CreatureViolationsActivity"
+            android:name=".presentation.views.student.CreatureViolationsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".presentation.views.AccountStudent"
+            android:name=".presentation.views.student.AccountStudent"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".presentation.views.MyMessagesActivity"
+            android:name=".presentation.views.student.MyMessagesActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".presentation.views.DetailMessageActivity"
-            android:screenOrientation="portrait"/>
         <activity
-            android:name=".presentation.views.EditMessageActivity"
-            android:screenOrientation="portrait"/>
+            android:name=".presentation.views.student.DetailMessageActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".presentation.views.student.EditMessageActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".presentation.views.employee.AccountEmployeeActivity" />
+        <activity android:name=".presentation.views.employee.AllMsgEmployeeActivity" />
+        <activity android:name=".presentation.views.employee.DetailMsgEmployeeActivity"></activity>
     </application>
 
 </manifest>

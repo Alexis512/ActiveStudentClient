@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="activestudent.com.client.alex.presentation.views.EditMessageActivity">
+    tools:context="activestudent.com.client.alex.presentation.views.student.EditMessageActivity">
 
 
     <include layout="@layout/my_toolbar"/>

@@ -1,10 +1,7 @@
 package activestudent.com.client.alex.di.modules
 
 import activestudent.com.client.alex.data.Violations
-import activestudent.com.client.alex.model.Messages
-import activestudent.com.client.alex.model.student.MessagesStudents
-import activestudent.com.client.alex.presentation.mvp.view.MyMessagesView
-import activestudent.com.client.alex.presentation.views.MyMessagesActivity
+import activestudent.com.client.alex.model.Message
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
@@ -23,7 +20,7 @@ class DataModule {
 
     @Singleton
     @Provides
-    fun providesMessages() = Messages(null, null, null, null, null, null,
+    fun providesMessages() = Message(null, null, null, null, null, null,
             null, null, null, null, null, null)
 
 

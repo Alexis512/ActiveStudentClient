@@ -2,8 +2,10 @@ package activestudent.com.client.alex.presentation.views
 
 import activestudent.com.client.alex.App
 import activestudent.com.client.alex.R
-import activestudent.com.client.alex.presentation.mvp.presenterImpl.MainActivityPresenterImpl
-import activestudent.com.client.alex.presentation.mvp.view.MainView
+import activestudent.com.client.alex.presentation.mvp.presenterImpl.student.MainActivityPresenterImpl
+import activestudent.com.client.alex.presentation.mvp.view.student.MainView
+import activestudent.com.client.alex.presentation.views.employee.AccountEmployeeActivity
+import activestudent.com.client.alex.presentation.views.student.AccountStudent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -32,7 +34,9 @@ class MainActivity : AppCompatActivity(), MainView {
         btnLogin.setOnClickListener {
             mPresenter.saveUserData("login", edLogin.text.toString())
             mPresenter.saveUserData("id", "5a6b9c5e79693800045c3f7a")
-            startActivity<AccountStudent>()
+            if (edLogin.text.toString() == "stud")
+                startActivity<AccountStudent>()
+            else startActivity<AccountEmployeeActivity>()
         }
     }
 }
