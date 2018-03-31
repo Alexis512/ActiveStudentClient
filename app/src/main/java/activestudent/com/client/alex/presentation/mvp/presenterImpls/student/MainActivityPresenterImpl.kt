@@ -1,8 +1,8 @@
-package activestudent.com.client.alex.presentation.mvp.presenterImpl.student
+package activestudent.com.client.alex.presentation.mvp.presenterImpls.student
 
 import activestudent.com.client.alex.model.UserData
 import activestudent.com.client.alex.presentation.mvp.presenter.student.MainActivityPresenter
-import activestudent.com.client.alex.presentation.mvp.presenterImpl.BaseMvpPresenterImpl
+import activestudent.com.client.alex.presentation.mvp.presenterImpls.BaseMvpPresenterImpl
 import activestudent.com.client.alex.presentation.mvp.view.student.MainView
 import javax.inject.Inject
 

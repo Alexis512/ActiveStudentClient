@@ -1,4 +1,4 @@
-package activestudent.com.client.alex.presentation.mvp.presenterImpl
+package activestudent.com.client.alex.presentation.mvp.presenterImpls
 
 import activestudent.com.client.alex.presentation.mvp.presenter.BaseMvpPresenter
 import activestudent.com.client.alex.presentation.mvp.view.BaseMvpView

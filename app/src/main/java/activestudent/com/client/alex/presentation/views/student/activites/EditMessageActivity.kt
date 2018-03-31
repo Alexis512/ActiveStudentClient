@@ -1,8 +1,8 @@
-package activestudent.com.client.alex.presentation.views.student
+package activestudent.com.client.alex.presentation.views.student.activites
 
 import activestudent.com.client.alex.App
 import activestudent.com.client.alex.R
-import activestudent.com.client.alex.presentation.mvp.presenterImpl.student.EditMessagePresenterImpl
+import activestudent.com.client.alex.presentation.mvp.presenterImpls.student.EditMessagePresenterImpl
 import activestudent.com.client.alex.presentation.mvp.view.student.EditMessageView
 import android.app.ProgressDialog
 import android.os.Bundle
@@ -38,6 +38,13 @@ class EditMessageActivity : AppCompatActivity(), EditMessageView {
 
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        editMsgPresenter.detachView()
+        if (progressDialog != null)
+            progressDialog?.dismiss()
+    }
+
     override fun onSuccess() {
         toast("Сообщение успешно обновлено")
         finish()
@@ -59,23 +66,6 @@ class EditMessageActivity : AppCompatActivity(), EditMessageView {
         finish()
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        editMsgPresenter.detachView()
-        if (progressDialog != null)
-            progressDialog?.dismiss()
-    }
-
-
-    fun setClickListener() {
-        btnSaveEdit.setOnClickListener({ onClickBtnSaveEdit() })
-    }
-
-    fun onClickBtnSaveEdit() {
-
-        editMsgPresenter.onUpdateMessage()
-    }
-
     override fun showProgressDialog() {
         progressDialog = indeterminateProgressDialog("Отправка сообщения")
         progressDialog!!.show()
@@ -84,4 +74,15 @@ class EditMessageActivity : AppCompatActivity(), EditMessageView {
     override fun hideProgressDialog() {
         progressDialog!!.hide()
     }
+
+    private fun setClickListener() {
+        btnSaveEdit.setOnClickListener({ onClickBtnSaveEdit() })
+    }
+
+    private fun onClickBtnSaveEdit() {
+
+        editMsgPresenter.onUpdateMessage()
+    }
+
+
 }

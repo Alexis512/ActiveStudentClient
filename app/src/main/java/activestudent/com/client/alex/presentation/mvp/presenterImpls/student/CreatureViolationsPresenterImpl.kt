@@ -1,9 +1,10 @@
-package activestudent.com.client.alex.presentation.mvp.presenterImpl.student
+package activestudent.com.client.alex.presentation.mvp.presenterImpls.student
 
 import activestudent.com.client.alex.domain.student.SenderMessagesInterator
+import activestudent.com.client.alex.model.Message
 import activestudent.com.client.alex.model.UserData
 import activestudent.com.client.alex.presentation.mvp.presenter.student.CreatureViolationsPresenter
-import activestudent.com.client.alex.presentation.mvp.presenterImpl.BaseMvpPresenterImpl
+import activestudent.com.client.alex.presentation.mvp.presenterImpls.BaseMvpPresenterImpl
 import activestudent.com.client.alex.presentation.mvp.view.student.CreatureViolationsView
 import javax.inject.Inject
 
@@ -28,9 +29,9 @@ class CreatureViolationsPresenterImpl @Inject constructor(private val sPref: Use
         mView?.onSuccess()
     }
 
-    override fun sendMessage() {
+    override fun sendMessage(message : Message) {
         mView?.showProgressDialog()
-        senderInterator.sendMessage()
+        senderInterator.sendMessage(message)
     }
 
     override fun getStudId() = sPref.loadId()

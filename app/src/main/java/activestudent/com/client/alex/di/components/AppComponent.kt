@@ -5,7 +5,8 @@ import activestudent.com.client.alex.presentation.views.MainActivity
 import activestudent.com.client.alex.presentation.views.employee.AccountEmployeeActivity
 import activestudent.com.client.alex.presentation.views.employee.AllMsgEmployeeActivity
 import activestudent.com.client.alex.presentation.views.employee.DetailMsgEmployeeActivity
-import activestudent.com.client.alex.presentation.views.student.*
+import activestudent.com.client.alex.presentation.views.student.activites.*
+import activestudent.com.client.alex.presentation.views.student.fragments.SchenduleLessonFragment
 import android.app.Application
 import dagger.Component
 import javax.inject.Singleton
@@ -16,7 +17,6 @@ import javax.inject.Singleton
 @Singleton
 @Component(modules = arrayOf(AppModule::class,
         StudentRoleModule::class,
-        UtilsModule::class,
         DataModule::class))
 
 interface AppComponent {
@@ -27,10 +27,11 @@ interface AppComponent {
     fun inject(violationsActivity: ViolationsActivity)
     fun inject(creatureViolationsActivity: CreatureViolationsActivity)
     fun inject(accountStudent: AccountStudent)
-    fun inject(messagesActivity: MyMessagesActivity)
+    fun inject(messagesActivity: MessagesActivity)
     fun inject(detailMessageActivity: DetailMessageActivity)
     fun inject(editMessageActivity: EditMessageActivity)
     fun inject(accountEmployeeActivity: AccountEmployeeActivity)
     fun inject(allMsgEmployeeActivity: AllMsgEmployeeActivity)
     fun inject(detailMsgEmployeeActivity: DetailMsgEmployeeActivity)
+    fun inject(schenduleLessonFragment: SchenduleLessonFragment)
 }

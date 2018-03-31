@@ -8,8 +8,8 @@ import activestudent.com.client.alex.presentation.mvp.view.student.CreatureViola
  */
 interface CreatureViolationsPresenter : BaseMvpPresenter<CreatureViolationsView> {
 
-    fun getStudId() : String
-    fun sendMessage()
+    fun getStudId(): String
+    fun sendMessage(message : activestudent.com.client.alex.model.Message)
     fun onSuccess()
     fun onFailure()
 }

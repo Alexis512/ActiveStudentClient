@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     style="@style/AppTheme"
     android:orientation="vertical"
-    tools:context="activestudent.com.client.alex.presentation.views.student.AccountStudent">
+    tools:context="activestudent.com.client.alex.presentation.views.student.activites.AccountStudent">
 
     <include
         android:id="@+id/include"
@@ -31,7 +31,7 @@
 
 
     <Button
-        android:id="@+id/account"
+        android:id="@+id/btnSchendule"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_above="@+id/div"
@@ -50,7 +50,7 @@
         android:id="@+id/div1"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_above="@+id/account"
+        android:layout_above="@+id/btnSchendule"
         android:layout_alignParentStart="true"
         android:background="@color/borderBtn" />
 

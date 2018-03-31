@@ -1,8 +1,8 @@
-package activestudent.com.client.alex.presentation.views.student
+package activestudent.com.client.alex.presentation.views.student.activites
 
 import activestudent.com.client.alex.App
 import activestudent.com.client.alex.R
-import activestudent.com.client.alex.presentation.mvp.presenterImpl.student.AccountPresenterImpl
+import activestudent.com.client.alex.presentation.mvp.presenterImpls.student.AccountPresenterImpl
 import activestudent.com.client.alex.presentation.mvp.view.student.AccountView
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -32,8 +32,10 @@ class AccountStudent : AppCompatActivity(), AccountView {
     }
 
 
-    fun setListener() {
+    private fun setListener() {
         newMsg.setOnClickListener({ startActivity<ViolationsActivity>() })
-        myMsg.setOnClickListener({startActivity<MyMessagesActivity>()})
+        myMsg.setOnClickListener({ startActivity<MessagesActivity>() })
+        btnSchendule.setOnClickListener({ startActivity<SchenduleActivity>() })
+
     }
 }

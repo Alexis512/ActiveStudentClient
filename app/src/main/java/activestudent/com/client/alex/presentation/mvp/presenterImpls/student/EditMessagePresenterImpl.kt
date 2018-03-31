@@ -1,9 +1,9 @@
-package activestudent.com.client.alex.presentation.mvp.presenterImpl.student
+package activestudent.com.client.alex.presentation.mvp.presenterImpls.student
 
 import activestudent.com.client.alex.domain.student.EditMessageIntetator
 import activestudent.com.client.alex.model.Message
 import activestudent.com.client.alex.presentation.mvp.presenter.student.EditMessagePresenter
-import activestudent.com.client.alex.presentation.mvp.presenterImpl.BaseMvpPresenterImpl
+import activestudent.com.client.alex.presentation.mvp.presenterImpls.BaseMvpPresenterImpl
 import activestudent.com.client.alex.presentation.mvp.view.student.EditMessageView
 import javax.inject.Inject
 

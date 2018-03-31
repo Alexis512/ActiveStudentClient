@@ -6,6 +6,7 @@ import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Named
 import javax.inject.Singleton
 
 /**
@@ -20,17 +21,18 @@ class DataModule {
 
     @Singleton
     @Provides
-    fun providesMessages() = Message(null, null, null, null, null, null,
-            null, null, null, null, null, null)
-
-
-    @Singleton
-    @Provides
     fun providesRetrofit() = Retrofit.Builder()
             .baseUrl("https://smartstud.herokuapp.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-            
+
+    @Singleton
+    @Provides
+    @Named("RetrofitForSchendule")
+    fun providesRetrifitSchedule() = Retrofit.Builder()
+            .baseUrl("http://vyatsuscheduleapi.herokuapp.com/vyatsu/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
 
 }
 

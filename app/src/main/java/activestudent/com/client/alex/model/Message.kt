@@ -3,22 +3,18 @@ package activestudent.com.client.alex.model
 import android.os.Parcel
 import android.os.Parcelable
 
-/**
- * Created by alex on 18.02.2018.
- */
-
-data class Message(var _id: String?,
-                   var numMessage: String?,
-                   var id_stud: String?,
-                   var photo: String?,
-                   var categoryWork: String?,
-                   var location: String?,
-                   var time_state: String?,
-                   var time_impl: String?,
-                   var type_work: String?,
-                   var executor: String?,
-                   var status: String?,
-                   var description: String?) : Parcelable {
+data class Message(var _id: String? = null,
+                   var numMessage: String? = null,
+                   var id_stud: String? = null,
+                   var photo: String? = null,
+                   var categoryWork: String? = null,
+                   var location: String? = null,
+                   var time_state: String? = null,
+                   var time_impl: String? = null,
+                   var type_work: String? = null,
+                   var executor: String? = null,
+                   var status: String? = null,
+                   var description: String? = null) : Parcelable {
 
     constructor(parcel: Parcel) : this(
             parcel.readString(),
@@ -62,4 +58,5 @@ data class Message(var _id: String?,
             return arrayOfNulls(size)
         }
     }
+
 }

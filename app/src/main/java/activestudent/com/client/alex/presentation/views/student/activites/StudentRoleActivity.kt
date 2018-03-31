@@ -1,8 +1,8 @@
-package activestudent.com.client.alex.presentation.views.student
+package activestudent.com.client.alex.presentation.views.student.activites
 
 import activestudent.com.client.alex.App
 import activestudent.com.client.alex.R
-import activestudent.com.client.alex.presentation.mvp.presenterImpl.student.StudentRolePresenterImpl
+import activestudent.com.client.alex.presentation.mvp.presenterImpls.student.StudentRolePresenterImpl
 import activestudent.com.client.alex.presentation.mvp.view.student.StudentRoleView
 import android.content.Intent
 import android.content.pm.PackageManager

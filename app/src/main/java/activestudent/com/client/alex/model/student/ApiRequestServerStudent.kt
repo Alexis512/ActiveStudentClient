@@ -4,10 +4,7 @@ import activestudent.com.client.alex.model.Message
 import retrofit2.Call
 import retrofit2.http.*
 
-/**
- * Created by alex on 20.02.2018.
- */
-interface MessagesStudents {
+interface ApiRequestServerStudent {
 
     @POST("api/v1/regMessage")
     fun addMessage(@Body message: Message): Call<Void>

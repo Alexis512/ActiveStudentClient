@@ -26,7 +26,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".presentation.views.student.StudentRoleActivity" />
+        <activity android:name=".presentation.views.student.activites.StudentRoleActivity" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -39,26 +39,35 @@
         </provider>
 
         <activity
-            android:name=".presentation.views.student.ViolationsActivity"
+            android:name=".presentation.views.student.activites.ViolationsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".presentation.views.student.CreatureViolationsActivity"
+            android:name=".presentation.views.student.activites.CreatureViolationsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".presentation.views.student.AccountStudent"
+            android:name=".presentation.views.student.activites.AccountStudent"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".presentation.views.student.MyMessagesActivity"
+            android:name=".presentation.views.student.activites.MessagesActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".presentation.views.student.DetailMessageActivity"
+            android:name=".presentation.views.student.activites.DetailMessageActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".presentation.views.student.EditMessageActivity"
+            android:name=".presentation.views.student.activites.EditMessageActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".presentation.views.employee.AccountEmployeeActivity" />
-        <activity android:name=".presentation.views.employee.AllMsgEmployeeActivity" />
-        <activity android:name=".presentation.views.employee.DetailMsgEmployeeActivity"></activity>
+        <activity
+            android:name=".presentation.views.employee.AccountEmployeeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".presentation.views.employee.AllMsgEmployeeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".presentation.views.employee.DetailMsgEmployeeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".presentation.views.student.activites.SchenduleActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

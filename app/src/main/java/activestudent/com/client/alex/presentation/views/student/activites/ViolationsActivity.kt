@@ -1,4 +1,4 @@
-package activestudent.com.client.alex.presentation.views.student
+package activestudent.com.client.alex.presentation.views.student.activites
 
 import activestudent.com.client.alex.App
 import activestudent.com.client.alex.R
@@ -12,6 +12,7 @@ import android.view.Menu
 import android.widget.LinearLayout
 import kotlinx.android.synthetic.main.activity_violations.*
 import kotlinx.android.synthetic.main.my_toolbar.*
+import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 import javax.inject.Inject
@@ -20,9 +21,6 @@ class ViolationsActivity : AppCompatActivity() {
 
     @Inject
     lateinit var violations: Violations
-
-    @Inject
-    lateinit var message: Message
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,9 +38,7 @@ class ViolationsActivity : AppCompatActivity() {
             if (it.violation == "Другое")
                 toast("В разработке")
             else {
-                message.categoryWork = it.violation
-                message.type_work = it.worker
-                startActivity<CreatureViolationsActivity>()
+                startActivity(intentFor<CreatureViolationsActivity>("typeWork" to arrayListOf(it.worker, it.violation)))
             }
         }
     }

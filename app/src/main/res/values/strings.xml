@@ -30,4 +30,22 @@
     <string name="untreatedMsg">Новые зявки</string>
     <string name="labelNewMessages">Нет новых заявок.</string>
     <string name="LabelMyMessage">Ваших сообщений не найдено.</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="callsLessons">\n
+       <b>1 пара:</b>    8.20 - 9.50   \n\n
+       <b>2 пара:</b>    10.00 - 11.30 \n\n
+       <b>3 пара:</b>    11.45 - 13.15 \n\n
+       <b>4 пара:</b> 14.00 - 15.30 \n\n
+       <b>5 пара:</b>     15.45 - 17.15 \n\n
+       <b>6 пара:</b>    17.20 - 18.50 \n\n
+       <b>7 пара:</b>    18.55 - 20.25 \n
+    </string>
+    <string name="schenduleLessons">&lt;b>8.20 - 9.50:&lt;/b>   %1$s  &lt;br/> &lt;br/>
+        &lt;b>10.00 - 11.30:&lt;/b> %2$s  &lt;br/> &lt;br/>
+        &lt;b>11.45 - 13.15:&lt;/b> %3$s  &lt;br/> &lt;br/>
+        &lt;b>14.00 - 15.30:&lt;/b> %4$s  &lt;br/> &lt;br/>
+        &lt;b>15.45 - 17.15:&lt;/b> %5$s  &lt;br/> &lt;br/>
+        &lt;b>17.20 - 18.50:&lt;/b> %6$s  &lt;br/> &lt;br/>
+        &lt;b>18.55 - 20.25:&lt;/b> %7$s  &lt;br/> &lt;br/>
+    </string>
 </resources>

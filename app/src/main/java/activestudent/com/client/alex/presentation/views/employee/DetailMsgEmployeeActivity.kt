@@ -3,7 +3,7 @@ package activestudent.com.client.alex.presentation.views.employee
 import activestudent.com.client.alex.App
 import activestudent.com.client.alex.R
 import activestudent.com.client.alex.model.Message
-import activestudent.com.client.alex.presentation.mvp.presenterImpl.employee.DetailMsgEmployeePresenterImpl
+import activestudent.com.client.alex.presentation.mvp.presenterImpls.employee.DetailMsgEmployeePresenterImpl
 import activestudent.com.client.alex.presentation.mvp.view.employee.DetailMsgEmployeeView
 import android.app.ProgressDialog
 import android.support.v7.app.AppCompatActivity
@@ -20,6 +20,7 @@ class DetailMsgEmployeeActivity : AppCompatActivity(), DetailMsgEmployeeView {
 
     @Inject
     lateinit var detailMsgPresenter: DetailMsgEmployeePresenterImpl
+    @Suppress("DEPRECATION")
     private var progressDialog: ProgressDialog? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -64,17 +65,17 @@ class DetailMsgEmployeeActivity : AppCompatActivity(), DetailMsgEmployeeView {
     private fun initTextViews(msg: Message?) {
         tvHeader.text = msg?.categoryWork
         tvTimeState.text = detailMsgPresenter.convertTime(msg?.time_state!!)
-        if (msg?.time_impl == null) {
+        if (msg.time_impl == null) {
             tvTimeImpl.text = "-"
             tvExecutor.text = "-"
         } else {
             tvTimeImpl.text = detailMsgPresenter.convertTime(msg?.time_impl!!)
-            tvExecutor.text = msg?.executor
+            tvExecutor.text = msg.executor!!
         }
 
-        tvAddress.text = msg?.location
-        tvStatus.text = detailMsgPresenter.convertStatus(msg?.status!!)
-        tvDescription.text = msg?.description
-        tvNumMessage.text = msg?.numMessage
+        tvAddress.text = msg.location
+        tvStatus.text = detailMsgPresenter.convertStatus(msg.status!!)
+        tvDescription.text = msg.description
+        tvNumMessage.text = msg.numMessage
     }
 }
