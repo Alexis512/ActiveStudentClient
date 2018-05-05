@@ -3,8 +3,10 @@ package activestudent.com.client.alex.presentation.views.student.activites
 import activestudent.com.client.alex.App
 import activestudent.com.client.alex.R
 import activestudent.com.client.alex.model.Message
+import activestudent.com.client.alex.presentation.mvp.presenter.student.MyMessagesPresenter
 import activestudent.com.client.alex.presentation.mvp.presenterImpls.student.MyMessagesPresenterImpl
 import activestudent.com.client.alex.presentation.mvp.view.student.MyMessagesView
+import activestudent.com.client.alex.presentation.views.BaseActivity
 import activestudent.com.client.alex.presentation.views.recyclerView.adapters.LoadMessagesAdapter
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -17,12 +19,10 @@ import org.jetbrains.anko.startActivity
 import javax.inject.Inject
 
 
-class MessagesActivity : AppCompatActivity(), MyMessagesView {
-
-    @Inject
-    lateinit var msgPresenter: MyMessagesPresenterImpl
+class MessagesActivity : BaseActivity<MyMessagesView, MyMessagesPresenter>(), MyMessagesView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        App.component.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_messages)
         setSupportActionBar(my_toolbar)
@@ -30,20 +30,13 @@ class MessagesActivity : AppCompatActivity(), MyMessagesView {
         my_toolbar.setNavigationOnClickListener({
             onBackPressed()
         })
-        App.component.inject(this)
-        msgPresenter.attachView(this)
         initRecyclerAllMessages()
-        msgPresenter.loadAllMessages()
+        mvpPresenter.loadAllMessages()
     }
 
     override fun onRestart() {
         super.onRestart()
-        msgPresenter.loadAllMessages()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        msgPresenter.detachView()
+        mvpPresenter.loadAllMessages()
     }
 
     override fun onShowProgressBar() {
@@ -55,7 +48,7 @@ class MessagesActivity : AppCompatActivity(), MyMessagesView {
     }
 
     override fun getRecyclerMyMessages(messages: ArrayList<Message>) {
-        msgPresenter.hideProgressbar()
+        mvpPresenter.hideProgressbar()
         if (messages.size == 0) {
             recyclerAllMessages.visibility = View.GONE
             tvMyMessages.visibility = View.VISIBLE

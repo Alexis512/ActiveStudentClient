@@ -2,8 +2,10 @@ package activestudent.com.client.alex.presentation.views.student.activites
 
 import activestudent.com.client.alex.App
 import activestudent.com.client.alex.R
+import activestudent.com.client.alex.presentation.mvp.presenter.student.EditMessagePresenter
 import activestudent.com.client.alex.presentation.mvp.presenterImpls.student.EditMessagePresenterImpl
 import activestudent.com.client.alex.presentation.mvp.view.student.EditMessageView
+import activestudent.com.client.alex.presentation.views.BaseActivity
 import android.app.ProgressDialog
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -14,14 +16,13 @@ import org.jetbrains.anko.indeterminateProgressDialog
 import org.jetbrains.anko.toast
 import javax.inject.Inject
 
-class EditMessageActivity : AppCompatActivity(), EditMessageView {
+class EditMessageActivity : BaseActivity<EditMessageView, EditMessagePresenter>(), EditMessageView {
 
 
-    @Inject
-    lateinit var editMsgPresenter: EditMessagePresenterImpl
     private var progressDialog: ProgressDialog? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        App.component.inject(this)
         super.onCreate(savedInstanceState)
         setSupportActionBar(my_toolbar)
         setContentView(R.layout.activity_edit)
@@ -29,18 +30,15 @@ class EditMessageActivity : AppCompatActivity(), EditMessageView {
         my_toolbar.setNavigationOnClickListener({
             onBackPressed()
         })
-        App.component.inject(this)
         setClickListener()
-        editMsgPresenter.attachView(this)
-        editMsgPresenter.setMessages(intent.getParcelableExtra("message"))
-        description.setText(editMsgPresenter.onInitDescriptionField())
-        numRoom.setText(editMsgPresenter.onInitLocationField())
+        mvpPresenter.setMessages(intent.getParcelableExtra("message"))
+        description.setText(mvpPresenter.onInitDescriptionField())
+        numRoom.setText(mvpPresenter.onInitLocationField())
 
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        editMsgPresenter.detachView()
         if (progressDialog != null)
             progressDialog?.dismiss()
     }
@@ -81,7 +79,7 @@ class EditMessageActivity : AppCompatActivity(), EditMessageView {
 
     private fun onClickBtnSaveEdit() {
 
-        editMsgPresenter.onUpdateMessage()
+        mvpPresenter.onUpdateMessage()
     }
 
 

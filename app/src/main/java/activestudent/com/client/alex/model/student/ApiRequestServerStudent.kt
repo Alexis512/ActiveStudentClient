@@ -6,7 +6,7 @@ import retrofit2.http.*
 
 interface ApiRequestServerStudent {
 
-    @POST("api/v1/regMessage")
+    @POST("/api/v1/regMessage")
     fun addMessage(@Body message: Message): Call<Void>
 
     @GET("/api/v1/getMsgUser/{id_stud}")

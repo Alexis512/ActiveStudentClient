@@ -3,11 +3,17 @@
     xmlns:yourapp="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <item
+        android:id="@+id/callDispatchService"
+        android:icon="@drawable/ic_call"
+        android:title="@string/callDispatchService"
+        yourapp:showAsAction="always" />
+
     <item
         android:id="@+id/action_settings"
-        android:title="Test"
         android:icon="@drawable/ic_account_circle_black_36dp"
-        yourapp:showAsAction= "always" />
-
+        android:title="Test"
+        yourapp:showAsAction="always" />
 
 </menu>

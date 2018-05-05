@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/AppTheme"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    style="@style/AppTheme"
     android:orientation="vertical"
     tools:context="activestudent.com.client.alex.presentation.views.student.activites.AccountStudent">
 
-    <include
-        android:id="@+id/include"
-        layout="@layout/my_toolbar" />
+    <include layout="@layout/my_toolbar" />
 
     <Button
         android:id="@+id/newMsg"
         style="@style/ButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/include"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginTop="110dp"
@@ -29,68 +25,65 @@
         android:textAllCaps="false"
         android:textSize="22sp" />
 
-
-    <Button
-        android:id="@+id/btnSchendule"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_above="@+id/div"
-        android:layout_alignParentStart="true"
-        android:background="@drawable/ripple_acc_btn"
-        android:drawablePadding="25dp"
-        android:drawableStart="@drawable/ic_schedule"
-        android:gravity="center_vertical"
-        android:padding="20dp"
-        android:text="@string/schedule"
-        android:textAllCaps="false"
-        android:textColor="@color/black"
-        android:textSize="18sp" />
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical">
 
-    <View
-        android:id="@+id/div1"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_above="@+id/btnSchendule"
-        android:layout_alignParentStart="true"
-        android:background="@color/borderBtn" />
+        <Button
+            android:id="@+id/myMsg"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/ripple_acc_btn"
+            android:drawablePadding="25dp"
+            android:drawableStart="@drawable/ic_email_black_24dp"
+            android:gravity="center_vertical"
+            android:padding="20dp"
+            android:text="@string/my_msg"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
 
-    <Button
-        android:id="@+id/myMsg"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_above="@+id/div1"
-        android:layout_alignParentStart="true"
-        android:background="@drawable/ripple_acc_btn"
-        android:drawablePadding="25dp"
-        android:drawableStart="@drawable/ic_email_black_24dp"
-        android:gravity="center_vertical"
-        android:padding="20dp"
-        android:text="@string/my_msg"
-        android:textAllCaps="false"
-        android:textColor="@color/black"
-        android:textSize="18sp" />
 
-    <View
-        android:id="@+id/div"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_above="@+id/reference"
-        android:layout_alignParentEnd="true"
-        android:background="@color/borderBtn" />
+        <View
+            android:id="@+id/div1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/borderBtn" />
 
-    <Button
-        android:id="@+id/reference"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:background="@drawable/ripple_acc_btn"
-        android:drawableStart="@drawable/ic_description"
-        android:drawablePadding="25dp"
-        android:gravity="center_vertical"
-        android:padding="20dp"
-        android:text="@string/despription"
-        android:textAllCaps="false"
-        android:textColor="@color/black"
-        android:textSize="18sp" />
-</RelativeLayout>
+        <Button
+            android:id="@+id/btnSchendule"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/ripple_acc_btn"
+            android:drawablePadding="25dp"
+            android:drawableStart="@drawable/ic_schedule"
+            android:gravity="center_vertical"
+            android:padding="20dp"
+            android:text="@string/schedule"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <View
+            android:id="@+id/div"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/borderBtn" />
+
+        <Button
+            android:id="@+id/reference"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/ripple_acc_btn"
+            android:drawablePadding="25dp"
+            android:drawableStart="@drawable/ic_description"
+            android:gravity="center_vertical"
+            android:padding="20dp"
+            android:text="@string/despription"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+    </LinearLayout>
+</LinearLayout>

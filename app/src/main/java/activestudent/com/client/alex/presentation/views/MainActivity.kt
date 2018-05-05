@@ -2,6 +2,7 @@ package activestudent.com.client.alex.presentation.views
 
 import activestudent.com.client.alex.App
 import activestudent.com.client.alex.R
+import activestudent.com.client.alex.presentation.mvp.presenter.student.MainActivityPresenter
 import activestudent.com.client.alex.presentation.mvp.presenterImpls.student.MainActivityPresenterImpl
 import activestudent.com.client.alex.presentation.mvp.view.student.MainView
 import activestudent.com.client.alex.presentation.views.employee.AccountEmployeeActivity
@@ -12,28 +13,20 @@ import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.startActivity
 import javax.inject.Inject
 
-class MainActivity : AppCompatActivity(), MainView {
+class MainActivity : BaseActivity<MainView, MainActivityPresenter>(), MainView {
 
-    @Inject
-    lateinit var mPresenter: MainActivityPresenterImpl
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         App.component.inject(this)
+        super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setListener()
-        mPresenter.attachView(this)
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        mPresenter.detachView()
-    }
-
-    fun setListener() {
+    private fun setListener() {
         btnLogin.setOnClickListener {
-            mPresenter.saveUserData("login", edLogin.text.toString())
-            mPresenter.saveUserData("id", "5a6b9c5e79693800045c3f7a")
+            mvpPresenter.saveUserData("login", edLogin.text.toString())
+            mvpPresenter.saveUserData("id", "stud070689")
             if (edLogin.text.toString() != "stud")
                 startActivity<AccountStudent>()
             else startActivity<AccountEmployeeActivity>()

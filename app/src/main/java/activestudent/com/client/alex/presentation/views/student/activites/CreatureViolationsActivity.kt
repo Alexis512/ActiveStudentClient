@@ -3,11 +3,11 @@ package activestudent.com.client.alex.presentation.views.student.activites
 import activestudent.com.client.alex.App
 import activestudent.com.client.alex.R
 import activestudent.com.client.alex.model.Message
-import activestudent.com.client.alex.presentation.mvp.presenterImpls.student.CreatureViolationsPresenterImpl
+import activestudent.com.client.alex.presentation.mvp.presenter.student.CreatureViolationsPresenter
 import activestudent.com.client.alex.presentation.mvp.view.student.CreatureViolationsView
+import activestudent.com.client.alex.presentation.views.BaseActivity
 import android.app.ProgressDialog
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_creature_violations.*
 import kotlinx.android.synthetic.main.include_layout.*
 import kotlinx.android.synthetic.main.include_layout.view.*
@@ -15,23 +15,18 @@ import kotlinx.android.synthetic.main.my_toolbar.*
 import org.jetbrains.anko.*
 import java.text.SimpleDateFormat
 import java.util.*
-import javax.inject.Inject
 
 
-class CreatureViolationsActivity : AppCompatActivity(), CreatureViolationsView {
+class CreatureViolationsActivity : BaseActivity<CreatureViolationsView, CreatureViolationsPresenter>(), CreatureViolationsView {
 
-
-    @Inject
-    lateinit var presenter: CreatureViolationsPresenterImpl
 
     private var message: Message? = null
     private var progressDialog: ProgressDialog? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        App.component.inject(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_creature_violations)
-        App.component.inject(this)
-        presenter.attachView(this)
         setSupportActionBar(my_toolbar)
         my_toolbar.setNavigationIcon(R.drawable.ic_back)
         my_toolbar.setNavigationOnClickListener({
@@ -44,7 +39,6 @@ class CreatureViolationsActivity : AppCompatActivity(), CreatureViolationsView {
 
     override fun onDestroy() {
         super.onDestroy()
-        presenter.detachView()
         if (progressDialog != null)
             progressDialog!!.dismiss()
     }
@@ -80,8 +74,10 @@ class CreatureViolationsActivity : AppCompatActivity(), CreatureViolationsView {
             message?.location = numRoom.text.toString()
             message?.time_state = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ").format(Date())
             message?.description = description.text.toString()
-            message?.id_stud = presenter.getStudId()
-            presenter.sendMessage(message!!)
+            message?.id_stud = "stud070689"
+//            message?.id_stud = mvpPresenter.getStudId()
+            message?.status = "proc"
+            mvpPresenter.sendMessage(message!!)
         }
     }
 }

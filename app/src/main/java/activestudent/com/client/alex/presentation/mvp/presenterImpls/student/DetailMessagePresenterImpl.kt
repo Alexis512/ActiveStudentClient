@@ -59,7 +59,7 @@ class DetailMessagePresenterImpl @Inject constructor(val detailInterator: Detati
         return time.formatData(oldFormatTime)
     }
 
-    fun convertStatus(status: String): String {
+    override fun convertStatus(status: String): String {
         var cnvtStstus = ""
         when (status) {
             "proc" -> cnvtStstus = "Модерация"

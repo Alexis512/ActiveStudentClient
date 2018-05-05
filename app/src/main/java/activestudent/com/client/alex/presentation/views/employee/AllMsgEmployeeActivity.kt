@@ -34,7 +34,7 @@ class AllMsgEmployeeActivity : AppCompatActivity(), AllMsgEmployeeView {
         allMsgEmployeePresenter.attachView(this)
         recyclerMessagesEmployee.layoutManager = LinearLayoutManager(this, LinearLayout.VERTICAL, false)
         recyclerMessagesEmployee.hasFixedSize()
-        allMsgEmployeePresenter.onLoadMessages("Слесарь")
+        allMsgEmployeePresenter.onLoadMessages("Электрик")
     }
 
     override fun onDestroy() {

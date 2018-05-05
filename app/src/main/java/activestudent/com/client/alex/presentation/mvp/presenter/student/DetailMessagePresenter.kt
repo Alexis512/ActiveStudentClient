@@ -17,4 +17,5 @@ interface DetailMessagePresenter : BaseMvpPresenter<DetailMessageView> {
     fun onSuccessUpdateStatus()
     fun onFaliureUpdateStatus()
     fun onUpdateStatus(id: String?)
+    fun convertStatus(status: String): String
 }

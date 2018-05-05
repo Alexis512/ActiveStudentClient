@@ -28,7 +28,7 @@ class EditMessagePresenterImpl @Inject constructor(val editMessage: EditMessageI
 
     private var message: Message? = null
 
-    fun setMessages(msg: Message) {
+    override fun setMessages(msg: Message) {
         message = msg
     }
 

@@ -31,6 +31,17 @@ class ViolationsActivity : AppCompatActivity() {
         my_toolbar.setNavigationOnClickListener({
             onBackPressed()
         })
+        initRecyclerView()
+    }
+
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.my_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+
+    }
+
+    private fun initRecyclerView() {
         recycler.layoutManager = LinearLayoutManager(this, LinearLayout.VERTICAL, false)
         recycler.hasFixedSize()
 
@@ -41,12 +52,6 @@ class ViolationsActivity : AppCompatActivity() {
                 startActivity(intentFor<CreatureViolationsActivity>("typeWork" to arrayListOf(it.worker, it.violation)))
             }
         }
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.my_menu, menu)
-        return super.onCreateOptionsMenu(menu)
-
     }
 
 }

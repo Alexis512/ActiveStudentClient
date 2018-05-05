@@ -8,9 +8,10 @@ import activestudent.com.client.alex.presentation.mvp.view.BaseMvpView
 interface DetailMessageView : BaseMvpView {
     fun initTextViews()
     fun showAlertDialog()
-    fun showProgressDialog(description : String)
-    fun hideProgressDialog(description : String)
+    fun showProgressDialog(description: String)
+    fun hideProgressDialog(description: String)
     fun onSuccessUpdateStatus()
     fun onFailureUpdateStatus()
     fun onSuccessDeleteMessage()
+
 }

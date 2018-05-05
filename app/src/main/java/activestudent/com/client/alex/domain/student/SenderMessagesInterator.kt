@@ -9,6 +9,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
+import java.util.*
 import javax.inject.Inject
 
 /**
@@ -16,19 +17,22 @@ import javax.inject.Inject
  */
 class SenderMessagesInterator @Inject constructor(val retrofit: Retrofit) {
 
-    private var creaturePresenter : CreatureViolationsPresenterImpl? = null
+    private var creaturePresenter: CreatureViolationsPresenterImpl? = null
 
-    fun setPresenterListener(pres : CreatureViolationsPresenterImpl) {
+    fun setPresenterListener(pres: CreatureViolationsPresenterImpl) {
         creaturePresenter = pres
     }
-    fun sendMessage(message : Message) {
+
+    fun sendMessage(message: Message) {
         val sender = retrofit.create(ApiRequestServerStudent::class.java)
         sender.addMessage(message).enqueue(object : Callback<Void> {
+
             override fun onFailure(call: Call<Void>?, t: Throwable?) {
                 Log.e("Error", t.toString())
             }
 
             override fun onResponse(call: Call<Void>?, response: Response<Void>?) {
+                Log.e("Error", response?.toString())
                 if (response?.isSuccessful!!) {
                     creaturePresenter?.onSuccess()
 

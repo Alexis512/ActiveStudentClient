@@ -9,7 +9,7 @@ import retrofit2.http.*
  */
 interface ApiRequestServerEmplyee {
 
-    @GET("/api/v1/getMessages/{type_work}")
+    @GET("/api/v1/getMessage/{type_work}")
     fun getMessagesEmployee(@Path("type_work") typeWork: String): Call<ArrayList<Message>>
 
     @PUT("/api/v1/updateStatusDone")

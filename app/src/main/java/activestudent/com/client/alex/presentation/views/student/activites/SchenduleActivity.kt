@@ -5,6 +5,7 @@ import activestudent.com.client.alex.presentation.views.student.fragments.Schend
 import activestudent.com.client.alex.presentation.views.student.fragments.SchenduleLessonFragment
 import activestudent.com.client.alex.presentation.views.tabLayout.ViewPagerAdapter
 import android.os.Bundle
+import android.support.v4.app.Fragment
 import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_schendule.*
@@ -21,7 +22,7 @@ class SchenduleActivity : AppCompatActivity() {
             onBackPressed()
         })
         setupViewPager(vpSchendule)
-        tlSchundule.setupWithViewPager(vpSchendule)
+        tlSchundule.setViewPager(vpSchendule)
 
     }
 

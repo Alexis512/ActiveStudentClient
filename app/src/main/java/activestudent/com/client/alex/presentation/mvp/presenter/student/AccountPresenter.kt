@@ -7,6 +7,6 @@ import activestudent.com.client.alex.presentation.mvp.view.student.AccountView
  * Created by alex on 20.02.2018.
  */
 interface AccountPresenter : BaseMvpPresenter<AccountView> {
-    fun allMessagesStudent()
+    fun onCallDispatchService()
 
 }

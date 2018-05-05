@@ -13,6 +13,5 @@ interface MyMessagesPresenter: BaseMvpPresenter<MyMessagesView> {
     fun onSuccess(itemsMessages : ArrayList<Message>)
     fun showProgressBar()
     fun hideProgressbar()
-
-
+    fun loadAllMessages()
 }

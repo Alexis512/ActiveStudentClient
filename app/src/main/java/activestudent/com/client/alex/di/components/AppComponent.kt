@@ -17,7 +17,8 @@ import javax.inject.Singleton
 @Singleton
 @Component(modules = arrayOf(AppModule::class,
         StudentRoleModule::class,
-        DataModule::class))
+        DataModule::class,
+        PresenterModule::class))
 
 interface AppComponent {
 

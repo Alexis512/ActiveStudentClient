@@ -9,12 +9,10 @@ import javax.inject.Inject
 /**
  * Created by alex on 20.02.2018.
  */
-class AccountPresenterImpl @Inject constructor(private val interactorMsgStudent: MessagesStudIteractor)
-    : BaseMvpPresenterImpl<AccountView>(), AccountPresenter {
+class AccountPresenterImpl @Inject constructor() : BaseMvpPresenterImpl<AccountView>(), AccountPresenter {
 
-    override fun allMessagesStudent() {
-       // interactorMsgStudent.allMessages()
+
+    override fun onCallDispatchService() {
+        mView?.callDispatch()
     }
-
-
 }

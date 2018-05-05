@@ -3,16 +3,17 @@ package activestudent.com.client.alex.model
 import android.os.Parcel
 import android.os.Parcelable
 
+
 data class Message(var _id: String? = null,
                    var numMessage: String? = null,
                    var id_stud: String? = null,
-                   var photo: String? = null,
+                   var photo: String? = "",
                    var categoryWork: String? = null,
                    var location: String? = null,
                    var time_state: String? = null,
-                   var time_impl: String? = null,
+                   var time_impl: String? = "",
                    var type_work: String? = null,
-                   var executor: String? = null,
+                   var executor: String? = "",
                    var status: String? = null,
                    var description: String? = null) : Parcelable {
 

@@ -22,7 +22,7 @@ class DataModule {
     @Singleton
     @Provides
     fun providesRetrofit() = Retrofit.Builder()
-            .baseUrl("https://smartstud.herokuapp.com/")
+            .baseUrl("https://smart-student-api.herokuapp.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 

@@ -7,30 +7,30 @@ import activestudent.com.client.alex.model.ViolationsItems
  */
 class Violations {
 
-    fun getViolationsItem() : ArrayList<ViolationsItems>{
+    fun getViolationsItem(): ArrayList<ViolationsItems> {
 
         //вынести array.xml
         val violations = ArrayList<ViolationsItems>()
         violations.add(ViolationsItems("Замена лампочки", "Электрик"))
         violations.add(ViolationsItems("Замена замка", "Слесарь"))
         violations.add(ViolationsItems("Снег у входа", "Дворник"))
-        violations.add(ViolationsItems("Текст тест", "тест"))
+        violations.add(ViolationsItems("Текст тест", "Дворник"))
         violations.add(ViolationsItems("Замена разетка", "Электрик"))
-        violations.add(ViolationsItems("Ремонт стен", "Рабочие"))
-        violations.add(ViolationsItems("Ремонт комнаты", "Рабочие"))
-        violations.add(ViolationsItems("Ремент пола", "Рабочие"))
+        violations.add(ViolationsItems("Ремонт стен", "Слесарь"))
+        violations.add(ViolationsItems("Ремонт комнаты", "Слесарь"))
+        violations.add(ViolationsItems("Ремент пола", "Слесарь"))
         violations.add(ViolationsItems("Мусор у входа", "Дворник"))
-        violations.add(ViolationsItems("Проблемы с лифтом", "Лифтер"))
+        violations.add(ViolationsItems("Проблемы с лифтом", "Электрик"))
         violations.add(ViolationsItems("Снег у входа", "Дворник"))
-        violations.add(ViolationsItems("Текст тест", "Тест1"))
-        violations.add(ViolationsItems("Текст тест1", "Тест2"))
-        violations.add(ViolationsItems("Текст тест2", "Тест3"))
-        violations.add(ViolationsItems("Текст тест3", "Тест4"))
-        violations.add(ViolationsItems("Текст тест4", "Тест5"))
-        violations.add(ViolationsItems("Текст тест5", "Тест6"))
-        violations.add(ViolationsItems("Текст тест6", "Тест7"))
-        violations.add(ViolationsItems("Текст тест7", "Тест8"))
-        violations.add(ViolationsItems("Другое", "Тест9"))
+        violations.add(ViolationsItems("Текст тест", "test"))
+        violations.add(ViolationsItems("Текст тест1", "test"))
+        violations.add(ViolationsItems("Текст тест2", "test"))
+        violations.add(ViolationsItems("Текст тест3", "test"))
+        violations.add(ViolationsItems("Текст тест4", "test"))
+        violations.add(ViolationsItems("Текст тест5", "test"))
+        violations.add(ViolationsItems("Текст тест6", "test"))
+        violations.add(ViolationsItems("Текст тест7", "test"))
+        violations.add(ViolationsItems("Другое", "test"))
         return violations
     }
 }

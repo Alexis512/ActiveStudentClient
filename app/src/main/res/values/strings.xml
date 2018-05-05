@@ -48,4 +48,5 @@
         &lt;b>17.20 - 18.50:&lt;/b> %6$s  &lt;br/> &lt;br/>
         &lt;b>18.55 - 20.25:&lt;/b> %7$s  &lt;br/> &lt;br/>
     </string>
+    <string name="callDispatchService">Позвонить в диспетчерскую службу</string>
 </resources>

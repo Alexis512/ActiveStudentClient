@@ -30,7 +30,7 @@ class MyMessagesPresenterImpl @Inject constructor(
         mView?.getRecyclerMyMessages(itemsMessages)
     }
 
-    fun loadAllMessages() {
+     override fun loadAllMessages() {
         iteractor.allMessages()
     }
 }
